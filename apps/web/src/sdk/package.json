@@ -1,0 +1,17 @@
+{
+  "name": "sov",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm --filter @sov/web dev",
+    "lint": "pnpm -r lint"
+  },
+    "engines": {
+      "node": ">=20 <21"
+    },
+    "packageManager": "pnpm@8.15.6",
+  "dependencies": {
+    "lucide-react": "^0.564.0"
+  }
+}

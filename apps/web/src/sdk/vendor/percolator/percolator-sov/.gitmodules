@@ -1,0 +1,18 @@
+[submodule "vendor/percolator"]
+	path = vendor/percolator
+	url = https://github.com/Perpmeme/percolator.git
+[submodule "vendor/percolator-prog"]
+	path = vendor/percolator-prog
+	url = https://github.com/Perpmeme/percolator-prog.git
+[submodule "vendor/percolator-match"]
+	path = vendor/percolator-match
+	url = https://github.com/Perpmeme/percolator-match.git
+[submodule "percolator"]
+	path = percolator
+	url = https://github.com/Perpmeme/percolator.git
+[submodule "percolator-prog"]
+	path = percolator-prog
+	url = https://github.com/Perpmeme/percolator-prog.git
+[submodule "percolator-match"]
+	path = percolator-match
+	url = https://github.com/Perpmeme/percolator-match.git

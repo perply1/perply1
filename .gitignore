@@ -1,0 +1,10 @@
+.DS_Store
+apps/web/node_modules/
+apps/web/.next/
+apps/web/dist/
+apps/web/.env
+apps/web/.env.local
+apps/web/.env*.local
+apps/web/.env.development.local
+apps/web/.env.test.local
+apps/web/.env.production.local

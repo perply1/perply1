@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 222 22% 5%;
+    --foreground: 210 20% 93%;
+    --card: 222 20% 7%;
+    --card-foreground: 210 20% 93%;
+    --popover: 222 20% 8%;
+    --popover-foreground: 210 20% 93%;
+    --primary: 168 80% 42%;
+    --primary-foreground: 222 22% 5%;
+    --secondary: 222 16% 11%;
+    --secondary-foreground: 210 15% 75%;
+    --muted: 222 14% 9%;
+    --muted-foreground: 215 12% 48%;
+    --accent: 168 80% 42%;
+    --accent-foreground: 222 22% 5%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 93%;
+    --border: 222 14% 12%;
+    --input: 222 14% 12%;
+    --ring: 168 80% 42%;
+    --chart-1: 142 70% 45%;
+    --chart-2: 0 72% 51%;
+    --chart-3: 168 80% 42%;
+    --chart-4: 45 93% 47%;
+    --chart-5: 210 40% 50%;
+    --radius: 0.375rem;
+    --sidebar-background: 222 20% 5.5%;
+    --sidebar-foreground: 210 20% 93%;
+    --sidebar-primary: 168 80% 42%;
+    --sidebar-primary-foreground: 222 22% 5%;
+    --sidebar-accent: 222 14% 10%;
+    --sidebar-accent-foreground: 210 20% 93%;
+    --sidebar-border: 222 14% 12%;
+    --sidebar-ring: 168 80% 42%;
+    --long: 152 69% 42%;
+    --short: 354 70% 54%;
+    --warning: 42 93% 50%;
+    --success: 152 69% 42%;
+    --surface: 222 18% 9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Wallet adapter modal overrides */
+.wallet-adapter-modal-wrapper {
+  background: hsl(222 20% 8%) !important;
+  border: 1px solid hsl(222 14% 12%) !important;
+  border-radius: 12px !important;
+  font-family: var(--font-jetbrains), monospace !important;
+}
+.wallet-adapter-modal-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: hsl(210 20% 93%) !important;
+}
+.wallet-adapter-modal-overlay {
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(4px) !important;
+}
+.wallet-adapter-button {
+  background: hsl(222 14% 11%) !important;
+  color: hsl(210 20% 93%) !important;
+  font-family: var(--font-jetbrains), monospace !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+  height: 40px !important;
+}
+.wallet-adapter-button:hover {
+  background: hsl(222 14% 15%) !important;
+}
+.wallet-adapter-modal-list li {
+  margin-bottom: 4px !important;
+}
+.wallet-adapter-modal-button-close {
+  background: hsl(222 14% 11%) !important;
+  border-radius: 8px !important;
+}
+.wallet-adapter-modal-button-close svg {
+  fill: hsl(215 12% 48%) !important;
+}
+
+/* Price flash glow effects */
+@keyframes price-glow-up {
+  0% { text-shadow: 0 0 8px hsl(142 70% 45% / 0.6); }
+  100% { text-shadow: none; }
+}
+@keyframes price-glow-down {
+  0% { text-shadow: 0 0 8px hsl(0 72% 51% / 0.6); }
+  100% { text-shadow: none; }
+}
+.price-flash-up {
+  animation: price-glow-up 0.8s ease-out;
+}
+.price-flash-down {
+  animation: price-glow-down 0.8s ease-out;
+}
+
+/* App header: subtle gradient (our colors) */
+.header-gradient {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--card)) 0%,
+    hsl(var(--primary) / 0.08) 30%,
+    hsl(var(--long) / 0.06) 60%,
+    hsl(var(--short) / 0.06) 85%,
+    hsl(var(--card)) 100%
+  );
+}
+
+/* Ticker tape: marquee gradient (primary / long / short brand colors) */
+.ticker-tape-gradient {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--card)) 0%,
+    hsl(var(--primary) / 0.14) 20%,
+    hsl(var(--long) / 0.18) 40%,
+    hsl(var(--short) / 0.14) 60%,
+    hsl(var(--primary) / 0.1) 80%,
+    hsl(var(--card)) 100%
+  );
+}
+
+/* Ticker tape scroll */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-scroll {
+  animation: ticker-scroll var(--ticker-duration, 30s) linear infinite;
+}
+.ticker-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Landing page marquee (gradient strip under header) */
+.landing-marquee-gradient {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.2) 20%,
+    hsl(var(--long) / 0.25) 50%,
+    hsl(var(--short) / 0.2) 80%,
+    transparent 100%
+  );
+}
+
+/* Safe area for mobile bottom nav */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Trading panel & form inputs */
+.sov-input {
+  @apply w-full px-2.5 rounded bg-white/[0.03] border border-white/[0.06] text-zinc-200 placeholder:text-zinc-600;
+  @apply focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20;
+  @apply transition-colors;
+}
+
+/* Custom scrollbar for the terminal aesthetic */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(222 14% 18%);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(222 14% 26%);
+}

@@ -1,0 +1,16 @@
+node_modules/
+.next/
+dist/
+
+# env (secrets, keys)
+.env
+.env.local
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# deps/build
+node_modules/
+.next/
+dist/

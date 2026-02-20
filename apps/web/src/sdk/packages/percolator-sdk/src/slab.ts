@@ -1,0 +1,15 @@
+export {
+  fetchSlab,
+  parseHeader,
+  parseConfig,
+  parseEngine,
+  parseParams,
+  parseAccount,
+  parseUsedIndices,
+  AccountKind,
+  type SlabHeader,
+  type MarketConfig,
+  type EngineState,
+  type Account,
+  type RiskParams,
+} from "./vendor/solana/slab";
